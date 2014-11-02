@@ -2,10 +2,156 @@
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
 			<and abstract="true" mandatory="true" name="JavaTextEditor">
-				<feature name="Base"/>
+				<and mandatory="true" name="Base">
+					<description>
+						core of editor
+					</description>
+					<feature mandatory="true" name="GUI"/>
+					<and mandatory="true" name="core">
+						<feature name="delete">
+							<description>
+								delete the current file
+							</description>
+						</feature>
+						<and name="edit">
+							<description>
+								file can be edit
+							</description>
+							<feature name="newFile">
+								<description>
+									create a new file
+									
+								</description>
+							</feature>
+							<or abstract="true" mandatory="true" name="save">
+								<description>
+									save the changes
+								</description>
+								<feature mandatory="true" name="saveCurrent">
+									<description>
+										save the the open file at the current filepath
+									</description>
+								</feature>
+								<feature mandatory="true" name="saveAs">
+									<description>
+										save the changed text as the new filepath
+									</description>
+								</feature>
+								<feature mandatory="true" name="autoSave">
+									<description>
+										save the changes in a time periode
+									</description>
+								</feature>
+							</or>
+						</and>
+						<feature name="duplicate">
+							<description>
+								make a duplicate from the current file and open the duplicate
+							</description>
+						</feature>
+						<feature name="print">
+							<description>
+								print the file
+							</description>
+						</feature>
+						<and name="search">
+							<description>
+								search a string in the file
+							</description>
+							<feature name="replace">
+								<description>
+									replace the search string
+								</description>
+							</feature>
+							<feature name="regex">
+								<description>
+									the searchstring is a regular expression
+								</description>
+							</feature>
+						</and>
+						<feature mandatory="true" name="show">
+							<description>
+								show a text file on the screen
+							</description>
+						</feature>
+						<and abstract="true" name="clipboard">
+							<description>
+								use the clipboard of the operationSystem
+							</description>
+							<feature mandatory="true" name="copyTo">
+								<description>
+									copy the selected text to the clipboard
+								</description>
+							</feature>
+							<feature name="pasteFrom">
+								<description>
+									paste text from the clipboard to the current position of the cursor
+								</description>
+							</feature>
+						</and>
+					</and>
+				</and>
+				<or abstract="true" mandatory="true" name="control">
+					<description>
+						how will be the editor conrtolled
+					</description>
+					<feature mandatory="true" name="Toolbar">
+						<description>
+							a toolbar used to show the main option
+						</description>
+					</feature>
+					<feature mandatory="true" name="Menu">
+						<description>
+							a standard menu used to show the main option
+						</description>
+					</feature>
+					<feature mandatory="true" name="shortcuts">
+						<description>
+							to control the option of the editor use shortcuts
+						</description>
+					</feature>
+				</or>
+				<or abstract="true" name="pastebin">
+					<description>
+						connection to pastebin
+					</description>
+					<or abstract="true" mandatory="true" name="exportToPastebin">
+						<description>
+							export to Pastebin
+						</description>
+						<feature mandatory="true" name="selectedText">
+							<description>
+								export only the selected Text
+							</description>
+						</feature>
+						<feature mandatory="true" name="currentFile">
+							<description>
+								export the complete file
+							</description>
+						</feature>
+					</or>
+					<or abstract="true" mandatory="true" name="importFromPastebin">
+						<description>
+							import content from pastebin
+						</description>
+						<feature mandatory="true" name="pasteToCursor">
+							<description>
+								paste the content to the cursor
+							</description>
+						</feature>
+						<feature mandatory="true" name="openInNewFile"/>
+					</or>
+				</or>
 			</and>
 		</struct>
-		<constraints/>
+		<constraints>
+			<rule>
+				<imp>
+					<var>pasteFrom</var>
+					<var>edit</var>
+				</imp>
+			</rule>
+		</constraints>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
 		<featureOrder userDefined="false"/>
