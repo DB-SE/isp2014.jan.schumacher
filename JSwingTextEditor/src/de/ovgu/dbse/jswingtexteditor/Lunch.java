@@ -4,6 +4,7 @@ import javax.swing.SwingUtilities;
 
 /**
  * start the application.
+ * 
  * @author Jan
  *
  */
