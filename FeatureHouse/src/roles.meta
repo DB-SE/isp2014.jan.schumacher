@@ -1,0 +1,132 @@
+{
+	"features" : [
+		"GUI",
+		"core",
+		"show",
+		"control",
+		"Toolbar",
+		"Menu",
+		"shortcuts",
+		"edit",
+		"search",
+		"regex",
+		"save",
+		"saveAs",
+		"autoSave"
+	],
+	"roles": {
+		"main": {
+			"core": "main"
+		},
+		"initGUI": {
+			"core": "initGUI__wrappee__core",
+			"search": "initGUI__wrappee__search",
+			"control": "initGUI__wrappee__control",
+			"save": "initGUI__wrappee__core",
+			"autoSave": "initGUI"
+		},
+		"initial": {
+			"show": "initial",
+			"edit": "initial"
+		},
+		"appendLine": {
+			"show": "appendLine"
+		},
+		"clean": {
+			"show": "clean"
+		},
+		"getPane": {
+			"show": "getPane"
+		},
+		"length": {
+			"show": "length"
+		},
+		"substring": {
+			"show": "substring"
+		},
+		"show": {
+			"show": "show"
+		},
+		"getStyledDocument": {
+			"show": "getStyledDocument"
+		},
+		"addStyle": {
+			"show": "addStyle"
+		},
+		"getContentString": {
+			"show": "getContentString"
+		},
+		"addText": {
+			"search": "addText"
+		},
+		"getComp": {
+			"search": "getComp"
+		},
+		"search": {
+			"search": "search",
+			"regex": "search"
+		},
+		"getMenus": {
+			"control": "getMenus__wrappee__control",
+			"Toolbar": "getMenus__wrappee__Toolbar",
+			"Menu": "getMenus",
+			"save": "getMenus__wrappee__control"
+		},
+		"getMenuComponent": {
+			"control": "getMenuComponent",
+			"Toolbar": "getMenuComponent",
+			"Menu": "getMenuComponent",
+			"shortcuts": "getMenuComponent__wrappee__Toolbar",
+			"saveCurrent": "getMenuComponent__wrappee__Toolbar",
+			"save": "getMenuComponent__wrappee__save",
+			"saveAs": "getMenuComponent"
+		},
+		"getOpenFileListner": {
+			"control": "getOpenFileListner"
+		},
+		"openFile": {
+			"control": "openFile"
+		},
+		"getSaveAsFileListner": {
+			"control": "getSaveAsFileListner",
+			"saveCurrent": "getSaveAsFileListner",
+			"saveAs": "getSaveAsFileListner"
+		},
+		"getSaveFileListner": {
+			"control": "getSaveFileListner",
+			"saveCurrent": "getSaveFileListner",
+			"save": "getSaveFileListner"
+		},
+		"openSaveFileChooser": {
+			"control": "openSaveFileChooser",
+			"saveCurrent": "openSaveFileChooser",
+			"save": "openSaveFileChooser"
+		},
+		"saveFile": {
+			"control": "saveFile",
+			"saveCurrent": "saveFile",
+			"save": "saveFile"
+		},
+		"addIcon": {
+			"Toolbar": "addIcon",
+			"Menu": "addIcon"
+		},
+		"addMenuItem": {
+			"Menu": "addMenuItem__wrappee__Menu",
+			"shortcuts": "addMenuItem",
+			"saveCurrent": "addMenuItem__wrappee__Menu",
+			"saveAs": "addMenuItem__wrappee__Menu"
+		},
+		"addToFileMenu": {
+			"Menu": "addToFileMenu__wrappee__Menu",
+			"save": "addToFileMenu__wrappee__save",
+			"saveAs": "addToFileMenu"
+		},
+		"addIcons": {
+			"Toolbar": "addIcons__wrappee__Toolbar",
+			"save": "addIcons__wrappee__save",
+			"saveAs": "addIcons"
+		}
+	}
+
+}

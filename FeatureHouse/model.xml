@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="JavaTextEditor">
+				<and abstract="true" mandatory="true" name="Base">
+					<description>
+						core of editor
+					</description>
+					<feature mandatory="true" name="GUI"/>
+					<and mandatory="true" name="core">
+						<and name="edit">
+							<description>
+								file can be edit
+							</description>
+							<and mandatory="true" name="save">
+								<description>
+									save the changes
+								</description>
+								<feature name="saveAs">
+									<description>
+										save the changed text as the new filepath
+									</description>
+								</feature>
+								<feature name="autoSave">
+									<description>
+										save the changes in a time periode
+									</description>
+								</feature>
+							</and>
+						</and>
+						<and name="search">
+							<description>
+								search a string in the file
+							</description>
+							<feature name="regex">
+								<description>
+									the searchstring is a regular expression
+								</description>
+							</feature>
+						</and>
+						<feature mandatory="true" name="show">
+							<description>
+								show a text file on the screen
+							</description>
+						</feature>
+					</and>
+				</and>
+				<or mandatory="true" name="control">
+					<description>
+						how will be the editor conrtolled
+					</description>
+					<feature mandatory="true" name="Toolbar">
+						<description>
+							a toolbar used to show the main option
+						</description>
+					</feature>
+					<and mandatory="true" name="Menu">
+						<description>
+							a standard menu used to show the main option
+						</description>
+						<feature name="shortcuts">
+							<description>
+								to control the option of the editor use shortcuts
+							</description>
+						</feature>
+					</and>
+				</or>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="true">
+			<feature name="GUI"/>
+			<feature name="core"/>
+			<feature name="show"/>
+			<feature name="control"/>
+			<feature name="Toolbar"/>
+			<feature name="Menu"/>
+			<feature name="shortcuts"/>
+			<feature name="edit"/>
+			<feature name="search"/>
+			<feature name="regex"/>
+			<feature name="save"/>
+			<feature name="saveAs"/>
+			<feature name="autoSave"/>
+		</featureOrder>
+	</featureModel>
