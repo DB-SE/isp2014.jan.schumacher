@@ -33,14 +33,14 @@ public   class  ToolbarMenu  extends MenuApi {
 	}
 
 	
-	 private void  addIcons__wrappee__save  (JToolBar toolBar){
+	 private void  addIcons__wrappee__saveToolBarIcon  (JToolBar toolBar){
 		addIcons__wrappee__Toolbar(toolBar);
 		addIcon(toolBar, "res/icon/document-save-7.png", getSaveFileListner());
 	}
 
 	
 	private void addIcons(JToolBar toolBar){
-		addIcons__wrappee__save(toolBar);
+		addIcons__wrappee__saveToolBarIcon(toolBar);
 		addIcon(toolBar, "res/icon/document-save-as-6.png",
 				getSaveAsFileListner(toolBar));
 	}

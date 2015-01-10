@@ -16,16 +16,20 @@
 								<description>
 									save the changes
 								</description>
-								<feature name="saveAs">
+								<and name="saveAs">
 									<description>
 										save the changed text as the new filepath
 									</description>
-								</feature>
+									<feature hidden="true" name="saveAsMainMenuItem"/>
+									<feature hidden="true" name="saveAsToolBarIcon"/>
+								</and>
 								<feature name="autoSave">
 									<description>
 										save the changes in a time periode
 									</description>
 								</feature>
+								<feature hidden="true" name="saveToolBarIcon"/>
+								<feature hidden="true" name="saveMainMenuItem"/>
 							</and>
 						</and>
 						<and name="search">
@@ -67,7 +71,80 @@
 				</or>
 			</and>
 		</struct>
-		<constraints/>
+		<constraints>
+			<rule>
+				<imp>
+					<conj>
+						<var>save</var>
+						<var>Toolbar</var>
+					</conj>
+					<var>saveToolBarIcon</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>saveToolBarIcon</var>
+					<conj>
+						<var>Toolbar</var>
+						<var>save</var>
+					</conj>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<conj>
+						<var>save</var>
+						<var>Menu</var>
+					</conj>
+					<var>saveMainMenuItem</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>saveMainMenuItem</var>
+					<conj>
+						<var>Menu</var>
+						<var>save</var>
+					</conj>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<conj>
+						<var>saveAs</var>
+						<var>Toolbar</var>
+					</conj>
+					<var>saveAsToolBarIcon</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>saveAsToolBarIcon</var>
+					<conj>
+						<var>Toolbar</var>
+						<var>saveAs</var>
+					</conj>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>saveAsMainMenuItem</var>
+					<conj>
+						<var>Menu</var>
+						<var>saveAs</var>
+					</conj>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<conj>
+						<var>saveAs</var>
+						<var>Menu</var>
+					</conj>
+					<var>saveAsMainMenuItem</var>
+				</imp>
+			</rule>
+		</constraints>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
 		<featureOrder userDefined="true">
@@ -81,8 +158,12 @@
 			<feature name="edit"/>
 			<feature name="search"/>
 			<feature name="regex"/>
-			<feature name="save"/>
 			<feature name="saveAs"/>
 			<feature name="autoSave"/>
+			<feature name="saveToolBarIcon"/>
+			<feature name="save"/>
+			<feature name="saveMainMenuItem"/>
+			<feature name="saveAsToolBarIcon"/>
+			<feature name="saveAsMainMenuItem"/>
 		</featureOrder>
 	</featureModel>

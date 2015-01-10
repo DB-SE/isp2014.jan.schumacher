@@ -10,9 +10,13 @@
 		"edit",
 		"search",
 		"regex",
-		"save",
 		"saveAs",
-		"autoSave"
+		"autoSave",
+		"saveToolBarIcon",
+		"save",
+		"saveMainMenuItem",
+		"saveAsToolBarIcon",
+		"saveAsMainMenuItem"
 	],
 	"roles": {
 		"main": {
@@ -120,12 +124,16 @@
 		"addToFileMenu": {
 			"Menu": "addToFileMenu__wrappee__Menu",
 			"save": "addToFileMenu__wrappee__save",
-			"saveAs": "addToFileMenu"
+			"saveAs": "addToFileMenu__wrappee__saveAs",
+			"saveMainMenuItem": "addToFileMenu__wrappee__saveMainMenuItem",
+			"saveAsMainMenuItem": "addToFileMenu"
 		},
 		"addIcons": {
 			"Toolbar": "addIcons__wrappee__Toolbar",
-			"save": "addIcons__wrappee__save",
-			"saveAs": "addIcons"
+			"save": "addIcons__wrappee__Toolbar",
+			"saveAs": "addIcons__wrappee__saveAs",
+			"saveToolBarIcon": "addIcons__wrappee__saveToolBarIcon",
+			"saveAsToolBarIcon": "addIcons"
 		}
 	}
 

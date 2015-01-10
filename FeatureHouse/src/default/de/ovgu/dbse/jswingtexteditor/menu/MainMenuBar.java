@@ -44,7 +44,7 @@ public   class  MainMenuBar  extends MenuApi {
 	}
 
 	
-	 private void  addToFileMenu__wrappee__save  (JMenuBar _menuBar){
+	 private void  addToFileMenu__wrappee__saveMainMenuItem  (JMenuBar _menuBar){
 		addToFileMenu__wrappee__Menu(_menuBar);
 		mnFile.add(addMenuItem("Save", KeyEvent.VK_S, InputEvent.CTRL_MASK,
 				getSaveFileListner()));
@@ -52,7 +52,7 @@ public   class  MainMenuBar  extends MenuApi {
 
 	
 	private void addToFileMenu(JMenuBar _menuBar){
-		addToFileMenu__wrappee__save(_menuBar);
+		addToFileMenu__wrappee__saveMainMenuItem(_menuBar);
 		mnFile.add(addMenuItem("Save As...", Integer.MIN_VALUE,
 				Integer.MIN_VALUE, getSaveAsFileListner(_menuBar)));
 	}

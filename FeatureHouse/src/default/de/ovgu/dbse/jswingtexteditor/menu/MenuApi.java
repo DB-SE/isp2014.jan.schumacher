@@ -70,6 +70,18 @@ public abstract   class  MenuApi {
 	}
 
 	
+	protected ActionListener getSaveAsFileListner(final Component _root) {
+		ActionListener listner;
+		listner = new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				openSaveFileChooser(_root);
+			}
+		};
+		return listner;
+	}
+
+	
 
 	protected ActionListener getSaveFileListner() {
 		ActionListener listner;
@@ -100,18 +112,6 @@ public abstract   class  MenuApi {
 	
 	private void saveFile(File _file){
 		MainFrame.saveFile(_file, text);
-	}
-
-	
-	protected ActionListener getSaveAsFileListner(final Component _root) {
-		ActionListener listner;
-		listner = new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				openSaveFileChooser(_root);
-			}
-		};
-		return listner;
 	}
 
 

@@ -10,12 +10,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane; 
 
 import de.ovgu.dbse.jswingtexteditor.menu.*; import de.ovgu.dbse.jswingtexteditor.search.*; 
+import java.util.TimerTask; 
+import java.util.Timer; 
 import java.io.FileNotFoundException; 
 import java.io.PrintWriter; 
 
 import de.ovgu.dbse.jswingtexteditor.TextEditView; 
-import java.util.TimerTask; 
-import java.util.Timer; 
+
 public   class  MainFrame  extends JFrame {
 	
 	public static File	currentFile;
