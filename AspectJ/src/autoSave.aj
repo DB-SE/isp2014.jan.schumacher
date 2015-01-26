@@ -12,7 +12,7 @@ public aspect autoSave {
 			
 			@Override
 			public void run() {
-				MainFrame.saveFile(MainFrame.currentFile, m.getText());
+				MainFrame.saveFile(m.getCurrentFile(), m.getText());
 			}
 		}, 10000, 10000 );
 	}

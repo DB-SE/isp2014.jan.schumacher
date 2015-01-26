@@ -16,20 +16,16 @@
 								<description>
 									save the changes
 								</description>
-								<and name="saveAs">
+								<feature name="saveAs">
 									<description>
 										save the changed text as the new filepath
 									</description>
-									<feature hidden="true" name="saveAsMainMenuItem"/>
-									<feature hidden="true" name="saveAsToolBarIcon"/>
-								</and>
+								</feature>
 								<feature name="autoSave">
 									<description>
 										save the changes in a time periode
 									</description>
 								</feature>
-								<feature hidden="true" name="saveToolBarIcon"/>
-								<feature hidden="true" name="saveMainMenuItem"/>
 							</and>
 						</and>
 						<and name="search">
@@ -47,7 +43,11 @@
 								show a text file on the screen
 							</description>
 						</feature>
-						<feature mandatory="true" name="dbWin"/>
+						<feature name="dbWin">
+							<description>
+								duplicate the current window
+							</description>
+						</feature>
 					</and>
 				</and>
 				<or mandatory="true" name="control">
@@ -58,11 +58,13 @@
 						<description>
 							a toolbar used to show the main option
 						</description>
-						<feature hidden="true" mandatory="true" name="dbWinToolbar">
+						<feature hidden="true" name="dbWinToolbar">
 							<description>
 								make a duplicate from the current file and open the duplicate
 							</description>
 						</feature>
+						<feature hidden="true" name="saveAsToolBarIcon"/>
+						<feature hidden="true" name="saveToolBarIcon"/>
 					</and>
 					<and mandatory="true" name="Menu">
 						<description>
@@ -73,7 +75,9 @@
 								to control the option of the editor use shortcuts
 							</description>
 						</feature>
-						<feature hidden="true" mandatory="true" name="dbWinMenu"/>
+						<feature hidden="true" name="dbWinMenu"/>
+						<feature hidden="true" name="saveMainMenuItem"/>
+						<feature hidden="true" name="saveAsMainMenuItem"/>
 					</and>
 				</or>
 			</and>
@@ -90,29 +94,11 @@
 			</rule>
 			<rule>
 				<imp>
-					<var>saveToolBarIcon</var>
-					<conj>
-						<var>Toolbar</var>
-						<var>save</var>
-					</conj>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
 					<conj>
 						<var>save</var>
 						<var>Menu</var>
 					</conj>
 					<var>saveMainMenuItem</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>saveMainMenuItem</var>
-					<conj>
-						<var>Menu</var>
-						<var>save</var>
-					</conj>
 				</imp>
 			</rule>
 			<rule>
@@ -126,29 +112,29 @@
 			</rule>
 			<rule>
 				<imp>
-					<var>saveAsToolBarIcon</var>
 					<conj>
+						<var>saveAs</var>
+						<var>Menu</var>
+					</conj>
+					<var>saveAsMainMenuItem</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<conj>
+						<var>dbWin</var>
+						<var>Menu</var>
+					</conj>
+					<var>dbWinMenu</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<conj>
+						<var>dbWin</var>
 						<var>Toolbar</var>
-						<var>saveAs</var>
 					</conj>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>saveAsMainMenuItem</var>
-					<conj>
-						<var>Menu</var>
-						<var>saveAs</var>
-					</conj>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<conj>
-						<var>saveAs</var>
-						<var>Menu</var>
-					</conj>
-					<var>saveAsMainMenuItem</var>
+					<var>dbWinToolbar</var>
 				</imp>
 			</rule>
 		</constraints>
@@ -157,20 +143,23 @@
 		<featureOrder userDefined="true">
 			<feature name="GUI"/>
 			<feature name="core"/>
-			<feature name="show"/>
-			<feature name="control"/>
-			<feature name="Toolbar"/>
-			<feature name="Menu"/>
-			<feature name="shortcuts"/>
 			<feature name="edit"/>
-			<feature name="search"/>
-			<feature name="regex"/>
+			<feature name="save"/>
 			<feature name="saveAs"/>
 			<feature name="autoSave"/>
-			<feature name="saveToolBarIcon"/>
-			<feature name="save"/>
-			<feature name="saveMainMenuItem"/>
+			<feature name="search"/>
+			<feature name="regex"/>
+			<feature name="show"/>
+			<feature name="dbWin"/>
+			<feature name="control"/>
+			<feature name="Toolbar"/>
+			<feature name="dbWinToolbar"/>
 			<feature name="saveAsToolBarIcon"/>
+			<feature name="saveToolBarIcon"/>
+			<feature name="Menu"/>
+			<feature name="shortcuts"/>
+			<feature name="dbWinMenu"/>
+			<feature name="saveMainMenuItem"/>
 			<feature name="saveAsMainMenuItem"/>
 		</featureOrder>
 	</featureModel>

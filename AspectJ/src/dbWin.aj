@@ -8,7 +8,6 @@ import de.ovgu.dbse.jswingtexteditor.MainFrame;
 
 
 public aspect dbWin {
-	// TODO Auto-generated aspect
 	public static ActionListener getNewWindow(MainFrame m){
 		 return new ActionListener() {
 				

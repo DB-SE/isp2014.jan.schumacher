@@ -1,3 +1,4 @@
+import java.awt.Insets;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
@@ -18,6 +19,7 @@ public aspect Toolbar {
 		final JButton icon;
 		
 		icon = new JButton(new ImageIcon(_res));
+		icon.setMargin(new Insets ( 0, 0, 0, 0 ) );
 		toolBar.add(icon);
 		toolBar.setFloatable(false);
 		icon.addActionListener(_listener);
