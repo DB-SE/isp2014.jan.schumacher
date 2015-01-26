@@ -11,17 +11,12 @@ import javax.swing.SwingUtilities;
 public  class  Launch {
 	
 	public static void main(final String... _args){
-		Runnable	guiCreator;
-		guiCreator = new Runnable() {
-
-			public void run() {
-				MainFrame	mainFrame;
-				
-				mainFrame = new MainFrame();
-				mainFrame.setVisible(true);
-			}
-		};
-		SwingUtilities.invokeLater(guiCreator);
+		SwingUtilities.invokeLater(() -> {
+			MainFrame mainFrame;
+			
+			mainFrame = new MainFrame();
+			mainFrame.setVisible(true);
+		});
 	}
 
 

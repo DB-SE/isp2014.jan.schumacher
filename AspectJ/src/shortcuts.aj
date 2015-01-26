@@ -20,7 +20,10 @@ public aspect shortcuts {
 				keyCode = KeyEvent.VK_S;
 				modifiers = InputEvent.CTRL_MASK;
 				break;
-			
+			case "New File":
+				keyCode = KeyEvent.VK_N;
+				modifiers = InputEvent.CTRL_MASK;
+				break;
 			default:
 				return item;
 		}

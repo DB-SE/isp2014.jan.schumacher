@@ -1,39 +1,53 @@
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+import javax.swing.JFileChooser;
+
 import de.ovgu.dbse.jswingtexteditor.MainFrame;
-import de.ovgu.dbse.jswingtexteditor.TextEditView;
 
 public aspect save {
 	
-	declare precedence: *,save,Toolbar;
-	public static void MainFrame.saveFile(File _file, TextEditView _text) {
-		if (_file == null || _text == null) {
+	declare	precedence: *,save,Toolbar;
+	
+	public static void saveFile(MainFrame m) {
+		if (m.getCurrentFile() == null) {
+			System.out.println("file not found");
+			openSaveFileChooser(m);
+			return;
+		}
+		if (m.getText() == null) {
+			System.out.println("text not found");
 			return;
 		}
 		try {
 			PrintWriter out;
-			out = new PrintWriter(_file);
-			out.print(_text.getContentString());
+			out = new PrintWriter(m.getCurrentFile());
+			out.print(m.getText().getContentString());
 			out.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
+	
 	public static ActionListener getSaveFileListner(MainFrame m) {
-		ActionListener listner;
-		listner = new ActionListener() {
-			
-
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.saveFile(m.getCurrentFile(), m.getText());
+		return e -> saveFile(m);
+	}
+	protected static void openSaveFileChooser(MainFrame m) {
+		File			file;
+		JFileChooser	fileChooser;
+		int				returnVal;
+		
+		fileChooser = new JFileChooser();
+		returnVal   = fileChooser.showSaveDialog(m);
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			file = fileChooser.getSelectedFile();
+			if (file != null) {
+				m.setCurrentFile(file);
+				saveFile(m);
 			}
-		};
-		return listner;
+		}
 	}
 }

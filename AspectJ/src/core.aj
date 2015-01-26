@@ -1,4 +1,3 @@
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFileChooser;
@@ -6,25 +5,17 @@ import javax.swing.JFileChooser;
 import de.ovgu.dbse.jswingtexteditor.MainFrame;
 
 public aspect core {
-	public ActionListener MainFrame.getOpenFileListner() {
-		ActionListener listner;
-		listner = new ActionListener() {
+	public static ActionListener getOpenFileListner(MainFrame m) {
+		return e -> {
+			JFileChooser fileChooser;
+			int returnVal;
 			
-			public void actionPerformed(ActionEvent e) {
-				openFile();
+			fileChooser = new JFileChooser();
+			returnVal = fileChooser.showOpenDialog(m);
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+				m.setCurrentFile(fileChooser.getSelectedFile());
+				m.loadCurrentFile();
 			}
 		};
-		return listner;
-	}
-	public void MainFrame.openFile() {
-		JFileChooser fileChooser;
-		int returnVal;
-
-		fileChooser = new JFileChooser();
-		returnVal = fileChooser.showOpenDialog(this);
-		if (returnVal == JFileChooser.APPROVE_OPTION) {
-			this.setCurrentFile(fileChooser.getSelectedFile());
-			this.loadCurrentFile();
-		}
 	}
 }

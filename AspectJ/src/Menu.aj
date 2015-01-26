@@ -18,13 +18,6 @@ public aspect Menu {
 		
 		menuBar = new JMenuBar();
 		menuBar.add(mnFile);
-		
-		// if (save) {
-		// mnFile.add(addMenuItem("Save", KeyEvent.VK_S, InputEvent.CTRL_MASK,
-		// getSaveFileListner()));
-		// mnFile.add(addMenuItem("Save As...", Integer.MIN_VALUE,
-		// Integer.MIN_VALUE, getSaveAsFileListner(menuBar)));
-		// }
 		m.getMenuPanel().add(menuBar,0);
 	}
 	
@@ -37,7 +30,7 @@ public aspect Menu {
 	}
 
 	after():set(* Menu.menuBar) {
-		addToFileMenu("Open", mainFrame.getOpenFileListner());
+		addToFileMenu("Open", core.getOpenFileListner(mainFrame));
 	}
 	
 	public void addToFileMenu(String _name, ActionListener _actionListener) {

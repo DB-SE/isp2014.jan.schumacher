@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="edit.aj|save.aj|saveAs.aj|autoSave.aj|newFile.aj|search.aj|regex.aj|dbWin.aj|dbWinToolbar.aj|saveAsToolBarIcon.aj|saveToolBarIcon.aj|newFileToolbar.aj|Menu.aj|shortcuts.aj|dbWinMenu.aj|saveMainMenuItem.aj|saveAsMainMenuItem.aj|newFileMenu.aj" kind="src" path="src"/>
+	<classpathentry kind="src" path="res"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
-	<classpathentry kind="src" path="res"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -27,6 +27,7 @@
 									</description>
 								</feature>
 							</and>
+							<feature name="newFile"/>
 						</and>
 						<and name="search">
 							<description>
@@ -65,6 +66,7 @@
 						</feature>
 						<feature hidden="true" name="saveAsToolBarIcon"/>
 						<feature hidden="true" name="saveToolBarIcon"/>
+						<feature hidden="true" name="newFileToolbar"/>
 					</and>
 					<and mandatory="true" name="Menu">
 						<description>
@@ -78,6 +80,7 @@
 						<feature hidden="true" name="dbWinMenu"/>
 						<feature hidden="true" name="saveMainMenuItem"/>
 						<feature hidden="true" name="saveAsMainMenuItem"/>
+						<feature hidden="true" name="newFileMenu"/>
 					</and>
 				</or>
 			</and>
@@ -137,29 +140,26 @@
 					<var>dbWinToolbar</var>
 				</imp>
 			</rule>
+			<rule>
+				<imp>
+					<conj>
+						<var>newFile</var>
+						<var>Menu</var>
+					</conj>
+					<var>newFileMenu</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<conj>
+						<var>newFile</var>
+						<var>Toolbar</var>
+					</conj>
+					<var>newFileToolbar</var>
+				</imp>
+			</rule>
 		</constraints>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
-		<featureOrder userDefined="true">
-			<feature name="GUI"/>
-			<feature name="core"/>
-			<feature name="edit"/>
-			<feature name="save"/>
-			<feature name="saveAs"/>
-			<feature name="autoSave"/>
-			<feature name="search"/>
-			<feature name="regex"/>
-			<feature name="show"/>
-			<feature name="dbWin"/>
-			<feature name="control"/>
-			<feature name="Toolbar"/>
-			<feature name="dbWinToolbar"/>
-			<feature name="saveAsToolBarIcon"/>
-			<feature name="saveToolBarIcon"/>
-			<feature name="Menu"/>
-			<feature name="shortcuts"/>
-			<feature name="dbWinMenu"/>
-			<feature name="saveMainMenuItem"/>
-			<feature name="saveAsMainMenuItem"/>
-		</featureOrder>
+
 	</featureModel>

@@ -32,10 +32,9 @@ public aspect Toolbar {
 	}
 
 	
-	final public static pointcut ADD_ICONS(Toolbar t):set(* Toolbar.toolBar) &&this(t);
 	
-	after(Toolbar t):Toolbar.ADD_ICONS(t){
-		addToolBarIcon("res/icon/document-open-8.png",
-				t.mainFrame.getOpenFileListner());
+	after():set(* Toolbar.toolBar){
+		addToolBarIcon("res/icon/document-open-3.png",
+				core.getOpenFileListner(this.mainFrame));
 	}
 }
