@@ -1,3 +1,5 @@
+package de.ovgu.dbse.jswingtexteditor;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

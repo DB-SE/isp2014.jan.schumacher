@@ -1,3 +1,5 @@
+package de.ovgu.dbse.jswingtexteditor.menu;
+
 import javax.swing.JToolBar;
 
 public class ToolbarMenu {

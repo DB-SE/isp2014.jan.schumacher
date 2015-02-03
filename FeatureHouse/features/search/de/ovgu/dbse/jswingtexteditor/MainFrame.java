@@ -1,3 +1,5 @@
+package de.ovgu.dbse.jswingtexteditor;
+
 import de.ovgu.dbse.jswingtexteditor.search.*;
 
 public class MainFrame extends JFrame {

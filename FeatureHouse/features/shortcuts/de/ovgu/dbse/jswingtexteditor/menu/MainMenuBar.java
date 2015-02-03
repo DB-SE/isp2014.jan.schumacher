@@ -1,6 +1,5 @@
 package de.ovgu.dbse.jswingtexteditor.menu;
 
-
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;

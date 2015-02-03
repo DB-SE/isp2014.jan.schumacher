@@ -1,3 +1,5 @@
+package de.ovgu.dbse.jswingtexteditor.search;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;

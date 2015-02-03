@@ -1,6 +1,8 @@
+package de.ovgu.dbse.jswingtexteditor;
 
 import java.util.TimerTask;
 import java.util.Timer;
+
 public class MainFrame extends JFrame {
 	private void initGUI(){
 		original();
